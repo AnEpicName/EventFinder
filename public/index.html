@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title>Event Finder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Import Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Import Style CSS -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Directiva que llama al navbar -->
+        <navbar></navbar>
+
+        <div class="container">
+            <!-- Aquí se irá mostrando el contenido de la pág -->
+            <div class="row" ng-view></div>
+            
+        </div>
+
+        <!-- Import AngularJS -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <!-- Import JQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Import Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Angular App Module -->
+        <script src="app/app.js"></script>
+        <!-- Angular Controllers -->
+        <script src="app/controllers/MapController.js"></script>
+
+        <!-- Conexión con el mapa -->
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy8tNtLQFnv_0nkZI1slEKun2BhT_ByU4&callback=initMap">
+        </script>
+    <!--    <script src="app/api/mapConnection.js"></script> -->
+
+    </body>
+</html>
