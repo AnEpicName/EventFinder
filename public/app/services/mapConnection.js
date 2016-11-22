@@ -8,7 +8,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: test  ,
         map: map,
-        title: "mati se la come"
+        title: "Ejemplo 1"
     });
     var marker2 = new google.maps.Marker({
         position: uluru  ,

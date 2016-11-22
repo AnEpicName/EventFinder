@@ -1,10 +1,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ExSchema = new Schema ({
-    name: String
+var EventSchema = new Schema ({
+    name: String,
+    description: String,
+    date: Date,
+    coord: {
+        lati: Number,
+        long: Number
+    },
+    host: {
+        name: String,
+        lastname: String,
+        email: String
+    }
 });
 
-var Example = mongoose.model('Example', ExSchema);
+var Event = mongoose.model('Event', EventSchema);
 
-module.exports = Example;
+module.exports = Event;
