@@ -51,7 +51,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+//module.exports = app;
+// routes
+require('./routes/events.js')(app);
 
+// listen 
 app.listen(8080);
 console.log("App listening on port 8080");
+
