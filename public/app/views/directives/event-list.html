@@ -20,22 +20,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Agregar evento</h4>
+        <h4 class="modal-title" id="myModalLabel">Crear evento</h4>
       </div>
       <div class="modal-body">
+
         <form>
             <div class="form-group">
-                Nombre del evento<input type="text" class="form-control" id="evento-nombre">
-                Fecha del evento<input type="text" class="form-control" id="evento-fecha">
+                Nombre del evento<input type="text" class="form-control" id="event-name">
+                Fecha del evento<input type="text" class="form-control" id="event-date">
                 Nombre del anfitrión<input type="text" class="form-control" id="host-name">
-
-
+                Apellido del anfitrión<input type="text" class="form-control" id="host-lastname">
+                Email del anfitrión<input type="text" class="form-control" id="host-email">
+                Descripción <textarea rows="5" cols="" class="form-control" id="event-des" ></textarea>
+                Latitud <input type="text" class="form-control" id="event-lat">
+                Longitud <input type="text" class="form-control" id="event-lon">
             </div>
         </form>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Publicar evento</button>
       </div>
     </div>
   </div>
