@@ -1,4 +1,4 @@
-var Event = require('./models/EventModel');
+var Event = require('../models/EventModel');
 
 module.exports = function(app) {
     // crea un evento y envía de vuelta todos los eventos después de crearse
@@ -23,7 +23,7 @@ module.exports = function(app) {
         });
 
         app.get('*', function(req, res) {
-            res.sendfile('./public/app/views/directives/event-list.html')
+            res.sendfile('/public/app/views/directives/event-list.html')
         });
     });
 };
