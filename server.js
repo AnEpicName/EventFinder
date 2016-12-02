@@ -22,13 +22,19 @@ var io = require('socket.io').listen(server);
 
 var mongoose = require('mongoose');
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('We are conectados.')
-});
+mongoose.connect('mongodb://localhost:27017/EventFinder');
+console.log(mongoose.connection.readyState);
 
-mongoose.connect('mongodb://localhost/EventFinder');
-
+/*
+mongoose.connect('mongodb://localhost:27017/EventFinder'), function(err, res) {
+  console.log('sd')
+  if(err) {
+    console.log('ERROR al conectarse con la base de deatos. ' + err);
+  } else {
+    console.log('Conexión exitosa.')
+  }
+};
+*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
