@@ -8,9 +8,6 @@
 
     //Opciones de mapa y configuración
     function MapController ($scope) {
-        $scope.map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 8,
-            center: {lat: -38.7495027 ,lng: -72.6133699}
-        });
+        
     }
 })();

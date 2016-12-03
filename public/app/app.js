@@ -1,7 +1,7 @@
 (function() {
     angular
         //Define el módulo de la app.
-        .module('app', ['ngRoute'])
+        .module('app', ['ngRoute','ngMap'])
         .config(config)
         //Define las directivas
         .directive('navbar', navbar)
