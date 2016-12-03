@@ -8,8 +8,7 @@
 
     //Opciones de mapa y configuración
     function MapController ($scope) {
-    $scope.lat = "-38.7";
-    $scope.lon = "-72.6";
     $scope.title = "epico!";
+    $scope.address = "Lautaro 772, Temuco";
     }
 })();
