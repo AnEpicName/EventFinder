@@ -6,3 +6,16 @@
     height: 400px;
     width: 100%;
 }
+
+body{
+    background-image: url('http://ovatheme.com/wp-content/uploads/2015/09/LiveEvents01.jpg');
+}
+
+#eventoBack{
+    border-radius: 20px;
+    background-color:rgba(149, 149, 149, 0.4);
+}
+
+#modalButtonDiv{
+    text-align:center;
+}
