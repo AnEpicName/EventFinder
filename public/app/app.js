@@ -5,7 +5,7 @@
         .config(config)
         //Define las directivas
         .directive('navbar', navbar)
-        .directive('map', mapView)
+        .directive('mapview', mapView)
         .directive('events', eventList);
 
     //Se definen las rutas de las vistas que tendrá la app y cuándo utilizarlas
