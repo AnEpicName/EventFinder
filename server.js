@@ -58,7 +58,7 @@ app.get('/events/load', function(req,res){
   console.log("Eventos cargados");
 });
 app.get('/events/save=:name-:description', function(req,res){
-  var small = Event({name:req.params.name, description:req.params.description});
+  var small = Event({ eventName:req.params.name, description:req.params.description});
   small.save(function (err, doc) {
     if (err) return handleError(err);
     console.log(doc);
