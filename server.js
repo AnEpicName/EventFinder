@@ -7,9 +7,6 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('eventfinder:server');
 var http = require('http');
 
-var users = require('./routes/users');
-var events = require('./routes/events');
-
 var app = express();
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
@@ -68,8 +65,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Routes
-app.all('/events', events);
+app.get('/events', function(req,res){
+  res.send("ruteado PERRA!");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
