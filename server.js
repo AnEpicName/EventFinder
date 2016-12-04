@@ -66,6 +66,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/events/load', function(req,res){
+   query.exec(function(err, doc){
+    console.log(mongoose.connection.readyState);
+    console.log(doc);
+  });
+
   console.log("Eventos cargados");
 });
 app.get('/events/save', function(req,res){
