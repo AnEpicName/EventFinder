@@ -22,37 +22,7 @@ var db = mongoose.connection;
 mongoose.connect('mongodb://localhost:27017/EventFinder');
 mongoose.Promise = global.Promise;
 console.log(mongoose.connection.readyState);
-//////
-var userSchemaJSON = {
-    name:String
-  }
 
-  var user_shcema = new mongoose.Schema(userSchemaJSON);
-  var User = mongoose.model("events", user_shcema);
-  var small = User({name:"Joaco"});
-  /*
-  small.save(function (err, doc) {
-  if (err) return handleError(err);
-    console.log(doc);
-  });
-  */
-  var query = User.find();
-  query.exec(function(err, doc){
-    console.log(mongoose.connection.readyState);
-    console.log(doc);
-  });
-
-//////
-/*
-mongoose.connect('mongodb://localhost:27017/EventFinder'), function(err, res) {
-  console.log('sd')
-  if(err) {
-    console.log('ERROR al conectarse con la base de deatos. ' + err);
-  } else {
-    console.log('Conexión exitosa.')
-  }
-};
-*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -65,17 +35,38 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+////////////////////////////////////////////////////////////
+var Event = require('./models/EventModel');
+
+/*
+small.save(function (err, doc) {
+if (err) return handleError(err);
+  console.log(doc);
+});
+*/
+var query = Event.find();
+query.exec(function(err, doc){
+  console.log(mongoose.connection.readyState);
+  console.log(doc);
+});
+
 app.get('/events/load', function(req,res){
    query.exec(function(err, doc){
     console.log(mongoose.connection.readyState);
     console.log(doc);
   });
-
   console.log("Eventos cargados");
 });
-app.get('/events/save', function(req,res){
+app.get('/events/save=:name-:description', function(req,res){
+  var small = Event({name:req.params.name, description:req.params.description});
+  small.save(function (err, doc) {
+    if (err) return handleError(err);
+    console.log(doc);
+  });
   console.log("Eventos guardados");
 });
+
+////////////////////////////////////////////////////////////
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

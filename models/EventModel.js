@@ -5,10 +5,7 @@ var EventSchema = new Schema({
     name:           { type: String },
     description:    { type: String },
     date:           { type: Date },
-    coord: {
-        lati: { type: Number },
-        long: { type: Number }
-    },
+    addr:           { type: String },
     host: {
         name:       { type: String },
         lastname:   { type: String },
@@ -16,6 +13,6 @@ var EventSchema = new Schema({
     }
 });
 
-var Event = mongoose.model('Event', EventSchema);
+var Event = mongoose.model('events', EventSchema);
 
 module.exports = Event;
