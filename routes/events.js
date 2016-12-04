@@ -5,7 +5,7 @@ var Event = require('../models/EventModel.js');
 module.exports = function(io) {
     io.on('connection', function(socket) {
         io.emit('this', 'xd');
-    })
+    });
     // crea un evento y envía de vuelta todos los eventos después de crearse
     /*
     router.get('/events/get', function(req, res, next) {
@@ -19,9 +19,10 @@ module.exports = function(io) {
         });
     });
     */
-    router.get('/events', function(req, res, next) {
-        console.log('Joaco qlo');
-        next();
+    console.log('asl');
+    router.get('/events', function(req, res) {
+        console.log('entró');
+        res.send('xd');
     }, function(req, res) {
         res.send('sas');
     });

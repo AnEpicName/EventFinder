@@ -33,10 +33,12 @@ var userSchemaJSON = {
   var user_shcema = new mongoose.Schema(userSchemaJSON);
   var User = mongoose.model("events", user_shcema);
   var small = User({name:"Joaco"});
+  /*
   small.save(function (err, doc) {
   if (err) return handleError(err);
     console.log(doc);
   });
+  */
   var query = User.find();
   query.exec(function(err, doc){
     console.log(mongoose.connection.readyState);
@@ -67,7 +69,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes
-app.all('/', events);
+app.all('/events', events);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -147,7 +149,5 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-//module.exports = app;
-// routes
-require('./routes/events.js')(app);
+
 
