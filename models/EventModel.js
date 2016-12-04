@@ -2,12 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var EventSchema = new Schema({
-    name:           { type: String },
+    eventName:           { type: String },
     description:    { type: String },
     date:           { type: Date },
     addr:           { type: String },
     host: {
-        name:       { type: String },
+        hostName:       { type: String },
         lastname:   { type: String },
         email:      { type: String }
     }

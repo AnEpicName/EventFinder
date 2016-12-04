@@ -24,7 +24,7 @@ mongoose.Promise = global.Promise;
 console.log(mongoose.connection.readyState);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/app/views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
