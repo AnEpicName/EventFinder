@@ -1,38 +1,28 @@
-var mongoose = require('mongoose');
-var Event = require('../models/EventModel');
+var express = require('express');
+var router = express.Router();
+var Event = require('../models/EventModel.js');
 
-module.exports = function(app) {
+module.exports = function(io) {
+    io.on('connection', function(socket) {
+        io.emit('this', 'xd');
+    })
     // crea un evento y envía de vuelta todos los eventos después de crearse
-    app.post('/api/events', function(req, res) {
-        /*
-        // crear un evento
-        Event.create({
-            name : req.body.name,
-            lastname : req.body.lastname,
-            description : req.body.description,
-            date : req.body.date
-        }, function(err, event) {
-            if (err)
-                res.send(err);
-            
-            // obtiene y retorna todos los eventos después de crear otro
-            Event.find(function(err, events) {
-                if (err)
-                res.send(err)
-                res.json(todos);
-            });
-        });
-        */
-
-        var events = mongoose.model('Event', Event);
-        console.log("joaco");
-        events.find({}, "name",function(err, event) {
+    /*
+    router.get('/events/get', function(req, res, next) {
+      
+        var events = mongoose.model('events', Event);
+        var query = Event.find();
+        
+        query.exec(function(err, doc){
             if(err) return handleError(err);
-            console.log(events.event.name)
-        })
-
-        app.get('*', function(req, res) {
-            res.sendfile('/public/app/views/directives/event-list.html')
+            console.log(doc);
         });
+    });
+    */
+    router.get('/events', function(req, res, next) {
+        console.log('Joaco qlo');
+        next();
+    }, function(req, res) {
+        res.send('sas');
     });
 };

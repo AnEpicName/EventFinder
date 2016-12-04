@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('eventfinder:server');
 var http = require('http');
 
-var index = require('./routes/index'),
-    users = require('./routes/users');
+var users = require('./routes/users');
+var events = require('./routes/events');
 
 var app = express();
 var port = normalizePort(process.env.PORT || '3000');
@@ -66,8 +66,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+//Routes
+app.all('/', events);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
