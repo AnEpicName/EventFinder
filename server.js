@@ -65,8 +65,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/events', function(req,res){
-  res.send("ruteado PERRA!");
+app.get('/events/load', function(req,res){
+  console.log("Eventos cargados");
+});
+app.get('/events/save', function(req,res){
+  console.log("Eventos guardados");
 });
 
 // catch 404 and forward to error handler
