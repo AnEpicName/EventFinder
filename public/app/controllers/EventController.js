@@ -5,19 +5,10 @@
     .controller('EventController', EventController);
 
   function EventController($scope, $http) {
-    $scope.formData = {};
-
   // cuando envía un formulario, manda los datos a node
     $scope.createEvent = function() {
-      $http.get('/events', $scope.formData)
-        .success(function(data) {
-          $scope.formData = {};
-          $scope.todos = data;
-          console.log(data);
-        })
-        .error(function(data) {
-          console.log('Error: ' + data);
-        });
+      console.log("mensaje: "+$scope.eventName);
+     //window.location = "/events/load";
     };
   }
 })();
