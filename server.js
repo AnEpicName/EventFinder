@@ -23,8 +23,27 @@ var io = require('socket.io').listen(server);
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 mongoose.connect('mongodb://localhost:27017/EventFinder');
+mongoose.Promise = global.Promise;
 console.log(mongoose.connection.readyState);
+//////
+var userSchemaJSON = {
+    name:String
+  }
 
+  var user_shcema = new mongoose.Schema(userSchemaJSON);
+  var User = mongoose.model("events", user_shcema);
+  var small = User({name:"Joaco"});
+  small.save(function (err, doc) {
+  if (err) return handleError(err);
+    console.log(doc);
+  });
+  var query = User.find();
+  query.exec(function(err, doc){
+    console.log(mongoose.connection.readyState);
+    console.log(doc);
+  });
+
+//////
 /*
 mongoose.connect('mongodb://localhost:27017/EventFinder'), function(err, res) {
   console.log('sd')
