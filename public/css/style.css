@@ -20,7 +20,7 @@ body{
     text-align:center;
 }
 
-.nav {
+.eventList {
     max-height: 300px;
     overflow-y: scroll;
 }
