@@ -6,10 +6,12 @@
     -->
     <h3>AnEpicMapa</h3>
     <div id="map">
-        <div map-lazy-load="https://maps.google.com/maps/api/js"
-            map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy8tNtLQFnv_0nkZI1slEKun2BhT_ByU4">
+        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy8tNtLQFnv_0nkZI1slEKun2BhT_ByU4">
             <ng-map center="-38.7, -72.6" zoom="8">
-                 <marker position="{{address}}" title="{{title}}"></marker>
+                <div ng-repeat="event in data">
+                    <marker position="{{event.addr}}" title="{{event.eventName}}"></marker>
+                </div>
+                
             </ng-map>
         </div>
     </div>

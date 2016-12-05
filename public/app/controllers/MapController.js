@@ -1,14 +1,15 @@
 //Este archivo controla el mapa y su configuración
-(function() {
+(function () {
     angular
         //Se define el módulo principal al que pertenece el controlador
         .module('app')
         //Define el controlador y sus parámetros
-        .controller('MapController', ['$scope', MapController]);
+        .controller('MapController', MapController);
 
     //Opciones de mapa y configuración
-    function MapController ($scope) {
-    $scope.title = "epico!";
-    $scope.address = "Lautaro 772, Temuco";
+    function MapController($scope, $http) {
+        $http.get('/events/load').success(function (data) {
+            $scope.data = data;
+        });
     }
 })();
