@@ -58,7 +58,7 @@ app.get('/events/load', function(req,res){
   console.log("Eventos cargados");
 });
 
-app.get('/events/save=:eventName-:date-:userName-:userlastName-:email-:description-:address', function(req,res){
+app.get('/events/save=:eventName--:date--:userName--:userlastName--:email--:description--:address', function(req,res){
  
 
   var small = Event({eventName:req.params.eventName, 
