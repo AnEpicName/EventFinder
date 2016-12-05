@@ -4,13 +4,12 @@ var Schema = mongoose.Schema;
 var EventSchema = new Schema({
     eventName:           { type: String },
     description:    { type: String },
-    date:           { type: Date },
+    date:           { type: String },
     addr:           { type: String },
-    host: {
-        hostName:       { type: String },
-        lastname:   { type: String },
-        email:      { type: String }
-    }
+    hostName:       { type: String },
+    hostLastname:   { type: String },
+    hostEmail:      { type: String }
+    
 });
 
 var Event = mongoose.model('events', EventSchema);

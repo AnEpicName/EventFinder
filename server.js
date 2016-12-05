@@ -51,14 +51,24 @@ query.exec(function(err, doc){
 });
 
 app.get('/events/load', function(req,res){
+  var query = Event.find();
    query.exec(function(err, doc){
-    console.log(mongoose.connection.readyState);
     console.log(doc);
   });
   console.log("Eventos cargados");
 });
-app.get('/events/save=:name-:description', function(req,res){
-  var small = Event({ eventName:req.params.name, description:req.params.description});
+
+app.get('/events/save=:eventName-:date-:userName-:userlastName-:email-:description-:address', function(req,res){
+ 
+
+  var small = Event({eventName:req.params.eventName, 
+    date:req.params.date, 
+    hostName:req.params.userName,
+    hostLastname:req.params.userlastName,
+    hostEmail:req.params.email, 
+    description:req.params.description,
+    addr:req.params.address});
+
   small.save(function (err, doc) {
     if (err) return handleError(err);
     console.log(doc);
