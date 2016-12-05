@@ -1,10 +1,18 @@
 <!-- Acá irá la lista de los eventos que estén ocurrieno o por ocurrir -->
 <div ng-controller="EventController">
   <h3 style="text-align:center">Eventos</h3>
-  <div class="col-md-4 events" id="eventoBack" >
+  <div class="col-md-4 events parallax nav list-group" id="eventoBack" >
       <!-- Un ng-repeat serviría para mostrar la lista -->
       <div ng-repeat="event in data">
-        {{event.eventName}}
+        <div class="list-group-item active"><p>Nombre Evento: {{event.eventName}}</p></div>
+        <div class="list-group-item"> 
+          <p>Descripción: {{event.description}}</p>
+          <p>Fecha: {{event.date}}</p>
+          <p>Dirección: {{event.addr}}</p>
+          <p>Nombre de Organizador: {{event.hostName}}</p>
+          <p>Apellido de Organizador: {{event.hostLastname}}</p>
+          <p>Email de Organizador: {{event.hostEmail}}</p>
+        </div>
       </div>
 
   </div>

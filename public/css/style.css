@@ -19,3 +19,16 @@ body{
 #modalButtonDiv{
     text-align:center;
 }
+
+.nav {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.list-group {
+    padding-left: initial;
+    padding-right: initial;
+}
+.active {
+    text-align: center;
+}

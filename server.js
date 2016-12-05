@@ -49,13 +49,12 @@ query.exec(function(err, doc){
   console.log(mongoose.connection.readyState);
 });
 
-app.get('/events/load', function(req,res,next){
+app.get('/events/load', function(req,res){
   var query = Event.find();
    query.exec(function(err, doc){
     console.log(doc);
     return res.json(doc);
   });
-  next();
   console.log("Eventos cargados");
 });
 
