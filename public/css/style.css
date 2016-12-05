@@ -8,7 +8,7 @@
 }
 
 body{
-    background-image: url('http://ovatheme.com/wp-content/uploads/2015/09/LiveEvents01.jpg');
+    background-image: url('http://cdn.wall-pix.net/albums/landscapes-city/00004332.jpg');
 }
 
 #eventoBack{
@@ -31,4 +31,9 @@ body{
 }
 .active {
     text-align: center;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
 }
