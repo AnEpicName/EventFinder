@@ -12,9 +12,10 @@
         + "--" + $scope.description + "--" + $scope.address;
     };
     
-    $http.get('/events/load').success(function(data){
-      $scope.Events = data;
-      alert(data.eventName)
+    $http.get('/events/load').success(function(data) {
+      $scope.data = data;
+      console.log(data[0].addr);
     });
+    
   }
 })();

@@ -47,15 +47,15 @@ if (err) return handleError(err);
 var query = Event.find();
 query.exec(function(err, doc){
   console.log(mongoose.connection.readyState);
-  console.log(doc);
 });
 
-app.get('/events/load', function(req,res){
+app.get('/events/load', function(req,res,next){
   var query = Event.find();
    query.exec(function(err, doc){
     console.log(doc);
     return res.json(doc);
   });
+  next();
   console.log("Eventos cargados");
 });
 

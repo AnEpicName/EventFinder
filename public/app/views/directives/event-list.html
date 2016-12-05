@@ -3,8 +3,9 @@
   <h3 style="text-align:center">Eventos</h3>
   <div class="col-md-4 events" id="eventoBack" >
       <!-- Un ng-repeat serviría para mostrar la lista -->
-      <p>zsdzs</p>
-      {{Event.eventName}}
+      <div ng-repeat="event in data">
+        {{event.eventName}}
+      </div>
 
   </div>
   <div class"input-group" id="modalButtonDiv">
@@ -13,33 +14,33 @@
     Agregar evento
   </button>
   </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Crear evento</h4>
-      </div>
-      <div class="modal-body">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Crear evento</h4>
+        </div>
+        <div class="modal-body">
 
-        <form ng-submit="createEvent()" ng-controller="EventController">
-            <div class="form-group">
-                Nombre del evento<input type="text" class="form-control" id="event-name" ng-model="eventName">
-                Fecha del evento<input type="date" class="form-control" id="event-date"  ng-model="date">
-                Nombre del anfitrión<input type="text" class="form-control" id="host-name" ng-model="hostName">
-                Apellido del anfitrión<input type="text" class="form-control" id="host-lastname" ng-model="lastname">
-                Email del anfitrión<input type="email" class="form-control" id="host-email" ng-model="email">
-                Descripción <textarea rows="5" cols="" class="form-control" id="event-des" ng-model="description"></textarea>
-                Ubicación <input type="text" class="form-control" id="event-address" ng-model="address" placeholder="Calle, Ciudad, Pais">
+          <form ng-submit="createEvent()">
+              <div class="form-group">
+                  Nombre del evento<input type="text" class="form-control" id="event-name" ng-model="eventName">
+                  Fecha del evento<input type="date" class="form-control" id="event-date"  ng-model="date">
+                  Nombre del anfitrión<input type="text" class="form-control" id="host-name" ng-model="hostName">
+                  Apellido del anfitrión<input type="text" class="form-control" id="host-lastname" ng-model="lastname">
+                  Email del anfitrión<input type="email" class="form-control" id="host-email" ng-model="email">
+                  Descripción <textarea rows="5" cols="" class="form-control" id="event-des" ng-model="description"></textarea>
+                  Ubicación <input type="text" class="form-control" id="event-address" ng-model="address" placeholder="Calle, Ciudad, Pais">
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary" >Publicar evento</button>
             </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary" >Publicar evento</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
